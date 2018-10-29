@@ -64,7 +64,7 @@ class Accounts extends Component {
           <a className='icon' href='https://steamcommunity.com/id/TheJayGatsby'>
             <IoLogoSteam />
           </a>
-          <a className='icon' href='www.linkedin.com/in/parker-illig'>
+          <a className='icon' href='https://www.linkedin.com/in/parker-illig'>
             <IoLogoLinkedin />
           </a>
         </h1>
