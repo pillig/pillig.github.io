@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Navbar.css';
 import {
   Collapse,
   Navbar,
@@ -30,22 +29,22 @@ export default class SiteNavbar extends Component {
     render() {
       return (
         <div>
-          <Navbar color="dark" light expand="md">
+          <Navbar className="navbar-dark bg-dark" expand="md">
             <NavbarBrand href="/">Parker Illig</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
+              <Nav pills fill className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="/about">About</NavLink>
+                  <NavLink href="#about">About</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/contact">Contact</NavLink>
+                  <NavLink href="#contact">Contact</NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
                     Projects
                   </DropdownToggle>
-                  <DropdownMenu right>
+                  <DropdownMenu className='Projects' right>
                   <DropdownItem header>CSCI 3308 - Software Development & Tools</DropdownItem>
                     <DropdownItem href='https://github.com/pillig/CSCI3308Project'>Your Yelp</DropdownItem>
                     <DropdownItem header>CSCI 4830 - Big Data HCI</DropdownItem>

@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { IoLogoSteam, IoLogoLinkedin } from "react-icons/io";
 import { Fade } from 'reactstrap';
 import Mailto from 'react-protected-mailto';
-import firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/firestore'
+import './Contact.css'
 
 function get_email () {
   firebase.initializeApp({
@@ -21,7 +23,6 @@ function get_email () {
   
   return db.collection("email").doc("gmail").get().then( function (doc) {
     if (doc.exists) { 
-      console.log('found ', doc.data()['address'])
       return doc.data()['address']
     }
     else {
@@ -58,26 +59,29 @@ class ContactText extends Component {
 class Accounts extends Component {
   render() {
     return (
-      <div className="accounts">
+      <div>
         <h1>
-          <IoLogoSteam />
-          <IoLogoLinkedin />
+          <a className='icon' href='https://steamcommunity.com/id/TheJayGatsby'>
+            <IoLogoSteam />
+          </a>
+          <a className='icon' href='www.linkedin.com/in/parker-illig'>
+            <IoLogoLinkedin />
+          </a>
         </h1>
       </div>
     )
   }
 }
 
-class ContactInfo extends Component {
+class Contact extends Component {
   constructor (props) {
     super(props)
     this.state = {
       email: undefined
     }
-    get_email().then( (d) => { console.log('setting ', d); this.setState({ email: d }) });
+    get_email().then( (d) => { this.setState({ email: d }) });
   }
   render() {
-    console.log('render con', this.state.email)
     return (
       <div>
         <ContactText email={this.state.email}></ContactText>
@@ -87,4 +91,4 @@ class ContactInfo extends Component {
   }
 }
 
-export default ContactInfo;
+export default Contact;
