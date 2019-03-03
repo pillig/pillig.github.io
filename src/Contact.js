@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { IoLogoSteam, IoLogoLinkedin } from "react-icons/io";
+import { IoLogoTwitter,
+         IoLogoGithub,
+         IoLogoInstagram,
+         IoLogoSteam, 
+         IoLogoLinkedin } from "react-icons/io";
 import { Fade } from 'reactstrap';
 import Mailto from 'react-protected-mailto';
 import * as firebase from 'firebase/app';
@@ -61,11 +65,20 @@ class Accounts extends Component {
     return (
       <div>
         <h1>
-          <a className='icon' href='https://steamcommunity.com/id/TheJayGatsby'>
-            <IoLogoSteam />
+          <a className='icon' href='https://www.github.com/pillig'>
+            <IoLogoGithub />
           </a>
           <a className='icon' href='https://www.linkedin.com/in/parker-illig'>
             <IoLogoLinkedin />
+          </a>
+          <a className='icon' href='https://twitter.com/typicalgatsby'>
+            <IoLogoTwitter />
+          </a>
+          <a className='icon' href='https://www.instagram.com/pillig45/'>
+            <IoLogoInstagram />
+          </a>
+          <a className='icon' href='https://steamcommunity.com/id/TheJayGatsby'>
+            <IoLogoSteam />
           </a>
         </h1>
       </div>
