@@ -11,19 +11,9 @@ import 'firebase/firestore'
 import './Contact.css'
 
 function get_email () {
-  firebase.initializeApp({
-    apiKey: 'AIzaSyC2Rd5TUOga6pTsoi6-KTKT-Fj5UcQh9Ro',
-    authDomain: 'pillig-personal-site.firebaseapp.com',
-    projectId: 'pillig-personal-site'
-  });
-  
+
   // Initialize Cloud Firestore through Firebase
   var db = firebase.firestore();
-  
-  // Disable deprecated features
-  db.settings({
-    timestampsInSnapshots: true
-  });
   
   return db.collection("email").doc("gmail").get().then( function (doc) {
     if (doc.exists) { 
