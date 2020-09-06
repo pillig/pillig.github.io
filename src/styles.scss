@@ -1,0 +1,225 @@
+$rich-black-fogra-29: #121619ff;
+$metallic-sunburst: #998650ff;
+$medium-carmine: #a44a3fff;
+$sweet-brown: #ac3931ff;
+$teal-blue: #537d8dff;
+$gainsboro: #ddddddff;
+$cultured: #eeeeeeff;
+
+$color-title-bar: $rich-black-fogra-29;
+$color-outer-panel: $sweet-brown;
+$color-inner-panel: $teal-blue;
+$color-background: $gainsboro;
+$color-text-light: $cultured;
+$color-text-dark: $rich-black-fogra-29;
+
+///// GENERAL
+////////////////////
+
+body {
+  height: 100%;
+  background-color: $color-background;
+}
+
+.body-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.footer {
+  padding-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+///// HEADER
+////////////////////
+
+.header-container {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 10px;
+  background-color: $color-title-bar;
+  color: $color-text-light;
+}
+
+.header-left {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin-right: auto;
+}
+
+.header-right {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+.project-menu {
+  top: 6px;
+  right: -10px;
+  padding: 0px;
+  background-color: $color-outer-panel;
+  opacity: 1;
+}
+
+.ant-dropdown-menu-item-group-title {
+  color: $color-text-light !important;
+  background-color: $color-title-bar;
+}
+
+.ant-dropdown-menu-item-group-list {
+  background-color: $color-outer-panel;
+  margin:0px;
+}
+
+.ant-dropdown-menu-item-active:hover {
+  background-color: $color-inner-panel !important;
+  border: 0px;
+}
+
+.ant-dropdown-menu-item-group-list a {
+  color: $color-text-light !important;
+  font-weight: 500;
+}
+
+.project-title {
+  font-weight: bold;
+
+}
+
+///// ABOUT
+////////////////////
+
+.about-container {
+  padding: 20px;
+}
+.about-title {
+  border-bottom: 1px solid $color-background;
+  background-color: $color-title-bar;
+  color: $color-text-light !important;
+  padding: 5px;
+  padding-left: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-bottom: 0px !important;
+}
+
+.about-body {
+  width: 100%;
+  background-color: $color-outer-panel;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.about-body .ant-typography {
+  color: $color-text-light !important;
+}
+
+///// FOOTER
+////////////////////
+
+.icon {
+    color:inherit;
+}
+.icon:hover {
+    color:inherit;
+}
+
+///// GOODREADS
+////////////////////
+
+.book-list-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 20px;
+  width: 500px;
+}
+
+.read-book-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  overflow: auto;
+  width: 100%;
+  height: 400px;
+  padding: 20px;
+  background-color: $color-outer-panel;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.book-container {
+  padding: 5px;
+  text-align: center;
+  width: 33%;
+  height: 40%;
+  position: relative;
+  text-align: center;
+}
+
+.list-spinner-container {
+  position: relative;
+  top: 50px;
+}
+
+.list-spinner, .book-spinner {
+  position: absolute !important;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+.book-list-header {
+  border-bottom: 1px solid $color-background;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  color: $color-text-light;
+  background-color: $color-title-bar;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.book-image {
+  height: 150px;
+  box-shadow: 0px 30px 40px -25px rgba(0, 0, 0, 1);
+}
+
+.book-overlay {
+  position: absolute;
+  width: 100%;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  opacity: 0;
+  visibility: hidden;
+  background-color: $color-inner-panel;
+  overflow: hidden;
+  font-size: 10px;
+  padding: 5px;
+}
+
+.book-container:hover .book-image {
+  filter: blur(2px);
+}
+
+.book-container:hover .book-overlay{
+  opacity: 1;
+  color: #EEEEEE;
+  visibility: visible;
+  border-radius: 3px;
+}
+
+.book-title {
+  font-weight: bold;
+}
+

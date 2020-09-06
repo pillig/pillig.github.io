@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import Contact from './Contact'
 import About from './About'
 import { GoodreadsComponent } from './Goodreads'
+import SiteHeader from './SiteHeader';
 import * as firebase from 'firebase/app';
 
 firebase.initializeApp({
@@ -14,13 +14,14 @@ firebase.initializeApp({
 class App extends Component {
   render() {
     return (
-      <div className="App bg-light">
-        <div className='row'>
-          <About className='about column left' />
-          <GoodreadsComponent className='goodreads column right' />
+      <div>
+        <SiteHeader />
+        <div className="body-section">
+          <About />
+          <GoodreadsComponent />
         </div>
-        <div className='footer row'>
-          <Contact className='contact' />
+        <div className="footer">
+          <Contact className="contact" />
         </div>
       </div>
     );

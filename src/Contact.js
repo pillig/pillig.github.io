@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { IoLogoTwitter,
-         IoLogoGithub,
-         IoLogoInstagram,
-         IoLogoSteam, 
+import { IoLogoGithub,
          IoLogoLinkedin } from "react-icons/io";
 import { Fade } from 'reactstrap';
 import Mailto from 'react-protected-mailto';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore'
-import './Contact.css'
 
 function get_email () {
 
@@ -30,8 +26,6 @@ class ContactText extends Component {
     if (this.props.email === undefined) {
       return (
         <div className="contactText">
-          <p>
-          </p>
         </div>
       )
     }
@@ -61,15 +55,6 @@ class Accounts extends Component {
           <a className='icon' href='https://www.linkedin.com/in/parker-illig'>
             <IoLogoLinkedin />
           </a>
-          <a className='icon' href='https://twitter.com/typicalgatsby'>
-            <IoLogoTwitter />
-          </a>
-          <a className='icon' href='https://www.instagram.com/pillig45/'>
-            <IoLogoInstagram />
-          </a>
-          <a className='icon' href='https://steamcommunity.com/id/TheJayGatsby'>
-            <IoLogoSteam />
-          </a>
         </h1>
       </div>
     )
@@ -86,7 +71,7 @@ class Contact extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="contact-container">
         <ContactText email={this.state.email}></ContactText>
         <Accounts></Accounts>
       </div>
