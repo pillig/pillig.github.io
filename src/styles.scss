@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 $rich-black-fogra-29: #121619ff;
 $metallic-sunburst: #998650ff;
@@ -44,7 +42,7 @@ body {
   height: 100%;
   max-width: 1500px;
   margin: auto;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Work Sans', sans-serif !important;
   display: flex;
   flex-flow: column nowrap;
 }
@@ -96,6 +94,18 @@ body {
   background-color: $color-inner-panel-even;
 }
 
+.panel-header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.inner-panel {
+  width: 100%;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .footer {
   position: relative;
   width: 100%;
@@ -109,6 +119,7 @@ body {
   color: $color-text-light;
   flex-grow: 0;
 }
+
 
 
 ///// HEADER
@@ -172,6 +183,7 @@ body {
 
 .about-container {
   padding: 20px;
+  max-width: 800px;
 }
 
 .about-title {
@@ -180,8 +192,6 @@ body {
 }
 
 .about-body {
-  width: 100%;
-  padding: 20px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -237,11 +247,8 @@ body {
   flex-flow: row wrap;
   justify-content: flex-start;
   overflow: auto;
-  width: 100%;
   height: 400px;
-  padding: 20px;;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+
 }
 
 .book-container {
@@ -263,11 +270,6 @@ body {
   bottom: 50%;
   right: 50%;
   transform: translate(50%, 50%);
-}
-
-.book-list-header {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
 }
 
 .book-image {
@@ -304,3 +306,27 @@ body {
   font-weight: bold;
 }
 
+///// GOODREADS
+////////////////////
+
+.wanikani-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+
+.wanikani-info-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+}
+
+.wanikani-info-label {
+  font-size: 12px;
+}
+
+.wanikani-info-value {
+  font-size: 36px;
+}

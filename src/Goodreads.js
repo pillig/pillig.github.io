@@ -20,8 +20,6 @@ function get_gr_key() {
   })
 }
 
-
-
 function get_gb_key() {
   
   // Initialize Cloud Firestore through Firebase
@@ -190,7 +188,7 @@ export class GoodreadsComponent extends Component {
 
     return (
       <div className={this.props.className}>
-        <div className="book-list-header title title-bar">Books Read This Year</div>
+        <div className="book-list-header panel-header title title-bar">Books Read This Year</div>
         {body_content}
       </div>
     )

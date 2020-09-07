@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Contact from './Contact'
 import About from './About'
+import { WanikaniComponent } from './Wanikani'
 import { GoodreadsComponent } from './Goodreads'
 import SiteHeader from './SiteHeader';
 import * as firebase from 'firebase/app';
@@ -20,6 +21,7 @@ class App extends Component {
           <div className="body-section">
             <About className="about-container body-panel"/>
             <GoodreadsComponent className="book-list-container body-panel" />
+            <WanikaniComponent className="book-list-container body-panel" />
           </div>
         </div>
         <div className="footer title-bar">
