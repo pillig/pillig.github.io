@@ -10,7 +10,7 @@ body {
 
 .app {
   height: 100%;
-  max-width: 1500px;
+  max-width: 1300px;
   margin: auto;
   font-family: 'Work Sans', sans-serif !important;
   display: -webkit-box;
@@ -62,9 +62,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   padding: 20px;
   color: #eeeeeeff;
   font-size: 18px;
@@ -191,7 +191,7 @@ body {
 
 .about-container {
   padding: 20px;
-  max-width: 800px;
+  max-width: 1200px;
 }
 
 .about-title {
