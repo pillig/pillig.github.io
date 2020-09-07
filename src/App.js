@@ -14,13 +14,15 @@ firebase.initializeApp({
 class App extends Component {
   render() {
     return (
-      <div>
-        <SiteHeader />
-        <div className="body-section">
-          <About />
-          <GoodreadsComponent />
+      <div className="app">
+        <div className="center-column">
+          <SiteHeader />
+          <div className="body-section">
+            <About className="about-container body-panel"/>
+            <GoodreadsComponent className="book-list-container body-panel" />
+          </div>
         </div>
-        <div className="footer">
+        <div className="footer title-bar">
           <Contact className="contact" />
         </div>
       </div>

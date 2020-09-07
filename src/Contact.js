@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { IoLogoGithub,
          IoLogoLinkedin } from "react-icons/io";
-import { Fade } from 'reactstrap';
 import Mailto from 'react-protected-mailto';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore'
@@ -25,18 +24,14 @@ class ContactText extends Component {
   render() {
     if (this.props.email === undefined) {
       return (
-        <div className="contactText">
+        <div className="contact-text">
         </div>
       )
     }
     else {
       return (
-        <div className="contactText">
-          <Fade>
-            <p>
-              You can contact me at <Mailto email={this.props.email} />.
-            </p>
-          </Fade>
+        <div className="contact-text">
+          You can contact me at <Mailto email={this.props.email} />
         </div>
       )
     }
@@ -47,15 +42,13 @@ class ContactText extends Component {
 class Accounts extends Component {
   render() {
     return (
-      <div>
-        <h1>
-          <a className='icon' href='https://www.github.com/pillig'>
-            <IoLogoGithub />
-          </a>
-          <a className='icon' href='https://www.linkedin.com/in/parker-illig'>
-            <IoLogoLinkedin />
-          </a>
-        </h1>
+      <div className="icon-container">
+        <a className='icon' href='https://www.github.com/pillig'>
+          <IoLogoGithub />
+        </a>
+        <a className='icon' href='https://www.linkedin.com/in/parker-illig'>
+          <IoLogoLinkedin />
+        </a>
       </div>
     )
   }
@@ -71,7 +64,7 @@ class Contact extends Component {
   }
   render() {
     return (
-      <div className="contact-container">
+      <div className="contact-container title">
         <ContactText email={this.state.email}></ContactText>
         <Accounts></Accounts>
       </div>

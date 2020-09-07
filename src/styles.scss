@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
 $rich-black-fogra-29: #121619ff;
 $metallic-sunburst: #998650ff;
 $medium-carmine: #a44a3fff;
@@ -5,35 +10,106 @@ $sweet-brown: #ac3931ff;
 $teal-blue: #537d8dff;
 $gainsboro: #ddddddff;
 $cultured: #eeeeeeff;
+$bronze: #d58936ff;
+$slate-gray: #6b717eff;
+$dark-electric-blue: #637081ff;
+$viridian: #558b6eff;
+$gold-fusion: #918450ff;
+$steel-blue: #3a7ca5ff;
 
 $color-title-bar: $rich-black-fogra-29;
-$color-outer-panel: $sweet-brown;
-$color-inner-panel: $teal-blue;
+$color-center-column: $sweet-brown;
+$color-inner-panel-odd: $gold-fusion;
+$color-inner-panel-even: $dark-electric-blue;
+$color-menu-panel: $sweet-brown;
+$color-menu-item-hover: $gold-fusion;
 $color-background: $gainsboro;
+
 $color-text-light: $cultured;
 $color-text-dark: $rich-black-fogra-29;
+$color-text-link: $steel-blue;
 
 ///// GENERAL
 ////////////////////
 
 body {
-  height: 100%;
   background-color: $color-background;
+}
+
+#main {
+  height: 100vh;
+}
+
+.app {
+  height: 100%;
+  max-width: 1500px;
+  margin: auto;
+  font-family: 'Roboto', sans-serif !important;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.center-column {
+  background-color: $color-center-column;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  flex-grow: 1;
+}
+
+.title-bar {
+  background-color: $color-title-bar;
+  text-align: center;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  color: $color-text-light !important;
+  border-bottom: 1px solid $color-background;
+}
+
+.title { 
+  font-family: 'Playfair Display', serif !important;
+  color: inherit !important;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 .body-section {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  padding: 20px;
+  color: $color-text-light;
+  font-size: 18px;
+}
+
+.body-panel {
+  color: $color-text-light;
+  padding: 20px;
+}
+
+.body-panel:nth-child(odd) .inner-panel {
+  background-color: $color-inner-panel-odd;
+}
+
+.body-panel:nth-child(even) .inner-panel {
+  background-color: $color-inner-panel-even;
 }
 
 .footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  right: 50%;
+  transform: translate(50%);
   padding-top: 10px;
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: $color-text-light;
+  flex-grow: 0;
 }
+
 
 ///// HEADER
 ////////////////////
@@ -41,9 +117,10 @@ body {
 .header-container {
   display: flex;
   flex-flow: row nowrap;
-  padding: 10px;
-  background-color: $color-title-bar;
-  color: $color-text-light;
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: $color-text-light !important;
 }
 
 .header-left {
@@ -60,25 +137,24 @@ body {
 }
 
 .project-menu {
-  top: 6px;
-  right: -10px;
   padding: 0px;
-  background-color: $color-outer-panel;
   opacity: 1;
+  color: $color-text-light !important;
+
 }
 
 .ant-dropdown-menu-item-group-title {
-  color: $color-text-light !important;
+  color: inherit !important;
   background-color: $color-title-bar;
 }
 
 .ant-dropdown-menu-item-group-list {
-  background-color: $color-outer-panel;
+  background-color: $color-menu-panel;
   margin:0px;
 }
 
 .ant-dropdown-menu-item-active:hover {
-  background-color: $color-inner-panel !important;
+  background-color: $color-menu-item-hover !important;
   border: 0px;
 }
 
@@ -89,7 +165,6 @@ body {
 
 .project-title {
   font-weight: bold;
-
 }
 
 ///// ABOUT
@@ -98,37 +173,52 @@ body {
 .about-container {
   padding: 20px;
 }
+
 .about-title {
-  border-bottom: 1px solid $color-background;
-  background-color: $color-title-bar;
-  color: $color-text-light !important;
-  padding: 5px;
-  padding-left: 10px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  margin-bottom: 0px !important;
 }
 
 .about-body {
   width: 100%;
-  background-color: $color-outer-panel;
   padding: 20px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 .about-body .ant-typography {
-  color: $color-text-light !important;
+  color: inherit !important;
 }
 
 ///// FOOTER
 ////////////////////
 
+.icon-container {
+  width: auto;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 .icon {
     color:inherit;
+    padding: 10px;
+    font-size: 56px;
 }
+
 .icon:hover {
     color:inherit;
+}
+
+.contact-container {
+  padding: 10px;
+}
+
+.contact-text {
+  padding-top: 10px;
+}
+
+.contact-text a {
+  color: $color-text-link;
 }
 
 ///// GOODREADS
@@ -149,8 +239,7 @@ body {
   overflow: auto;
   width: 100%;
   height: 400px;
-  padding: 20px;
-  background-color: $color-outer-panel;
+  padding: 20px;;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -177,14 +266,6 @@ body {
 }
 
 .book-list-header {
-  border-bottom: 1px solid $color-background;
-  padding: 5px;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-  width: 100%;
-  color: $color-text-light;
-  background-color: $color-title-bar;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -202,7 +283,7 @@ body {
   transform: translate(50%, 50%);
   opacity: 0;
   visibility: hidden;
-  background-color: $color-inner-panel;
+  background-color: $color-menu-panel;
   overflow: hidden;
   font-size: 10px;
   padding: 5px;

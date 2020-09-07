@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { Typography } from 'antd';
 
-const { Title, Paragraph } = Typography;
+const { Paragraph } = Typography;
 
 
 
 export default class About extends Component {
+
   render() {
     return (
-      <div className="about-container">
-        <Title className="about-title" level={2}>About Me</Title>
-        <div className="about-body">
+      <div className={this.props.className}>
+        <div className="about-title title title-bar">About Me</div>
+        <div className="about-body inner-panel">
           <Paragraph>
               Hey there, I'm Parker.
           </Paragraph>

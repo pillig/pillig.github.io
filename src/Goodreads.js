@@ -102,7 +102,7 @@ class GoodreadsList extends Component {
 
   render() {
      return (
-      <div className="read-book-list">
+      <div className="read-book-list inner-panel">
         {this.props.books.map((book, index) => (
             <Book title={book.title} author={book.author} key={index}/>
           ))}
@@ -180,15 +180,17 @@ export class GoodreadsComponent extends Component {
 
     if (this.state.loading) {
       body_content = (
-        <div className="list-spinner-container">
-          <Spin className="list-spinner" />
+        <div className={this.props.className}>
+          <div className="list-spinner-container">
+            <Spin className="list-spinner" />
+          </div>
         </div>
       );
     }
 
     return (
-      <div className="book-list-container">
-        <div className="book-list-header">Books Read This Year</div>
+      <div className={this.props.className}>
+        <div className="book-list-header title title-bar">Books Read This Year</div>
         {body_content}
       </div>
     )
