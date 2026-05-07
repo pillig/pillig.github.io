@@ -4,7 +4,7 @@ import About from './About'
 import { WanikaniComponent } from './Wanikani'
 import { GoodreadsComponent } from './Goodreads'
 import SiteHeader from './SiteHeader';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyC2Rd5TUOga6pTsoi6-KTKT-Fj5UcQh9Ro',
@@ -16,8 +16,8 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <SiteHeader />
         <div className="center-column">
-          <SiteHeader />
           <div className="body-section">
             <About className="about-container body-panel"/>
             <GoodreadsComponent className="book-list-container body-panel" />

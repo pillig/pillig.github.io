@@ -2,23 +2,7 @@ import React, { Component } from 'react';
 import { IoLogoGithub,
          IoLogoLinkedin } from "react-icons/io";
 import Mailto from 'react-protected-mailto';
-import * as firebase from 'firebase/app';
-import 'firebase/firestore'
-
-function get_email () {
-
-  // Initialize Cloud Firestore through Firebase
-  var db = firebase.firestore();
-  
-  return db.collection("email").doc("gmail").get().then( function (doc) {
-    if (doc.exists) { 
-      return doc.data()['address']
-    }
-    else {
-      return "ERROR"
-    }
-  })
-}
+import { getFirestoreValue } from './firebase';
 
 class ContactText extends Component {
   render() {
@@ -35,7 +19,6 @@ class ContactText extends Component {
         </div>
       )
     }
-
   }
 }
 
@@ -60,13 +43,13 @@ class Contact extends Component {
     this.state = {
       email: undefined
     }
-    get_email().then( (d) => { this.setState({ email: d }) });
+    getFirestoreValue('email', 'gmail', 'address').then((d) => { this.setState({ email: d }) });
   }
   render() {
     return (
       <div className="contact-container title">
-        <ContactText email={this.state.email}></ContactText>
-        <Accounts></Accounts>
+        <ContactText email={this.state.email} />
+        <Accounts />
       </div>
     )
   }

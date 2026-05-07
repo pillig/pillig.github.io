@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { DownOutlined } from '@ant-design/icons';
 import { Menu, Dropdown } from 'antd';
 import { Typography } from 'antd';
+import ThemePicker from './ThemePicker';
 
 const { Title } = Typography;
 
@@ -24,6 +25,7 @@ export default class SiteHeader extends Component {
         </Menu.ItemGroup>
         <Menu.ItemGroup className="project-title" title="Personal">
           <Menu.Item><a href="https://github.com/pillig/back-bot">Back-bot</a></Menu.Item>
+          <Menu.Item><a href="https://github.com/shaberiba/denver-shaberiba">denvershaberiba.club</a></Menu.Item>
         </Menu.ItemGroup>
       </Menu>
     )
@@ -36,6 +38,7 @@ export default class SiteHeader extends Component {
           </Title>
         </div>
         <div className="header-right">
+          {import.meta.env.DEV && <ThemePicker />}
           <Dropdown overlay={menu}>
             <div>
               Projects <DownOutlined/>
